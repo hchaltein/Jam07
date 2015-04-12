@@ -45,9 +45,9 @@ public class BossScript : MonoBehaviour {
         {
             Debug.Log("You win!");
 
-            //Destroy(this.gameObject);
-
             Destroy(this.gameObject);
+
+            Application.LoadLevel("MainMenu");
         }
 
         switch (BossState)

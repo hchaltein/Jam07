@@ -18,4 +18,10 @@ public class MainMenu : MonoBehaviour {
 	{
 		Application.LoadLevel("Boss Scene");
 	}
+
+
+    public void ExitLevel()
+    {
+        Application.Quit();
+    }
 }

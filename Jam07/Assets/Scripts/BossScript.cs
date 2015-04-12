@@ -3,14 +3,17 @@ using System.Collections;
 
 public class BossScript : MonoBehaviour {
 
-    enum BossState { IDDLE, STREAMSHOT, RADIALSHOOT, CIRCULARSHOT };
-    BossState CurState;
+    int BossState;
+    float ElapsedTime;
 
 	// Use this for initialization
 	void Start () {
 
         // Initialize the boss in his iddel state
-        CurState = BossState.IDDLE;
+        BossState = 0; // Iddle
+
+        // Reset Timer
+        ElapsedTime = 0.0f;
 	
 	}
 	
@@ -18,32 +21,40 @@ public class BossScript : MonoBehaviour {
 	void Update () {
 
         UpdateState();
-        switch(CurState)
+        switch (BossState)
         {
-            case BossState.IDDLE:
-                Debug.Log("Current State is: " + BossState.IDDLE);
+            case 0: // IDDLE
+                Debug.Log("Current State is: IDDLE");
                 break;
 
-            case BossState.STREAMSHOT:
-                Debug.Log("Current State is: " + BossState.STREAMSHOT);
+            case 1: // STREAMSHOT
+                Debug.Log("Current State is: STREAMSHOT");
                 break;
 
-            case BossState.RADIALSHOOT:
-                Debug.Log("Current State is: " + BossState.RADIALSHOOT);
+            case 2: // RADIALSHOOT
+                Debug.Log("Current State is: RADIALSHOOT");
                 break;
 
-            case BossState.CIRCULARSHOT:
-                Debug.Log("Current State is: " + BossState.CIRCULARSHOT);
+            case 3: //CIRCULARSHOT
+                Debug.Log("Current State is: CIRCULARSHOT");
                 break;
         }
-
-        
 	
 	}
     // This Updates the State machine. States are time-based
     void UpdateState()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) CurState++;
-       
+        ElapsedTime += Time.deltaTime;
+
+        if (ElapsedTime > 2.0f)
+        {
+            // Reset Timer
+            ElapsedTime = 0.0f;
+            if (BossState != 0) BossState = 0;
+            else
+            {
+                BossState = Random.Range(1, 3);
+            }
+        }     
     }
 }

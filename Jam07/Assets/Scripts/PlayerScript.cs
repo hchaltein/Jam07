@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
-    private float Health;
+    public float Health;
 
 	// Use this for initialization
 	void Start () {
@@ -19,22 +19,22 @@ public class PlayerScript : MonoBehaviour {
 
         if(Input.GetKey("up"))
         {
-            this.rigidbody.AddForce(new Vector3(0.0f, 1.0f, 0.0f) * 10.0f);
+            this.rigidbody2D.AddForce(new Vector3(0.0f, 1.0f, 0.0f) * 10.0f);
         }
 
         if (Input.GetKey("down"))
         {
-            this.rigidbody.AddForce(new Vector3(0.0f,-1.0f,0.0f) * 10.0f);
+            this.rigidbody2D.AddForce(new Vector3(0.0f, -1.0f, 0.0f) * 10.0f);
         }
 
         if (Input.GetKey("left"))
         {
-            this.rigidbody.AddForce(new Vector3(-1.0f,0.0f,0.0f) * 10.0f);
+            this.rigidbody2D.AddForce(new Vector3(-1.0f, 0.0f, 0.0f) * 10.0f);
         }
 
         if (Input.GetKey("right"))
         {
-            this.rigidbody.AddForce(new Vector3(1.0f, 0.0f, 0.0f) * 10.0f);
+            this.rigidbody2D.AddForce(new Vector3(1.0f, 0.0f, 0.0f) * 10.0f);
         }
 
         if(Input.GetKey("space"))
@@ -43,7 +43,7 @@ public class PlayerScript : MonoBehaviour {
         }
 	}
 
-    void OnTriggerEnter(Collider col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if(col.name == "eBullet")
         {

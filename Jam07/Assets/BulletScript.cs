@@ -11,7 +11,7 @@ public class BulletScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(this.transform.position.y < -6 || Mathf.Abs(this.transform.position.x) > 10 )
+        if (this.transform.position.y < -6 || Mathf.Abs(this.transform.position.x) > 10 || this.transform.position.y > 10)
 		{
 			DestroySelf();
 		}
@@ -21,4 +21,10 @@ public class BulletScript : MonoBehaviour {
 		Debug.Log("Destroyed");
 		Destroy(this.gameObject);
 	}
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.name != "BulletPrefab(Clone)" )
+            DestroySelf();
+    }
 }

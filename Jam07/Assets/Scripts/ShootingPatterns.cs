@@ -12,16 +12,19 @@ public Vector2 vel;
 	void Start () {
 		startingPoint = 0f;
 		radians = startingPoint;
-		if(this.gameObject.name == "Center") {
+        /*
+        if (this.gameObject.name == "Cannon A")
+        {
 			InvokeRepeating("ShootingRadial",0.1f,.1f);
 			InvokeRepeating("IncreaseAngle",0.1f,.001f);
 		}
-		if(this.gameObject.name == "Left")
-		InvokeRepeating("ShootingRDiagonal",0.1f,.1f);
+        //if (this.gameObject.name == "Cannon A")
+		//InvokeRepeating("ShootingRDiagonal",0.1f,.1f);
 //		if(this.gameObject.name == "Center")
 //		InvokeRepeating("ShootingStraight",0.1f,.2f);
-		if(this.gameObject.name == "Right")
-		InvokeRepeating("ShootingLDiagonal",0.1f,.1f);
+        //if (this.gameObject.name == "Cannon A")
+		//InvokeRepeating("ShootingLDiagonal",0.1f,.1f);
+        */
 	}
 	
 	// Update is called once per frame
@@ -29,13 +32,13 @@ public Vector2 vel;
 		
 		
 	}
-	
-	void ShootingStraight()
+
+    public void ShootingStraight()
 	{
 		GameObject bulls = GameObject.Instantiate(bullet,bulletSpawnPos.transform.position, Quaternion.identity) as GameObject;
 		bulls.rigidbody2D.AddForce(-Vector2.up*200);
 	}
-	void ShootingRDiagonal()
+	public void ShootingRDiagonal()
 	{
 		GameObject bulls = GameObject.Instantiate(bullet,bulletSpawnPos.transform.position, Quaternion.identity) as GameObject;
 		bulls.rigidbody2D.AddForce(-Vector2.up *200);
@@ -43,7 +46,7 @@ public Vector2 vel;
 		bulls.transform.Rotate (Vector3.forward  * 45  );
 	
 	}
-	void ShootingLDiagonal()
+    public void ShootingLDiagonal()
 	{
 		GameObject bulls = GameObject.Instantiate(bullet,bulletSpawnPos.transform.position, Quaternion.identity) as GameObject;
 		bulls.rigidbody2D.AddForce(-Vector2.up *200);
@@ -51,11 +54,12 @@ public Vector2 vel;
 		bulls.transform.Rotate (Vector3.forward  * -45  );
 		
 	}
-	
-	void IncreaseAngle() {
+
+    public void IncreaseAngle()
+    {
 		radians+= 0.01f;
 	}
-	void ShootingRadial()
+    public void ShootingRadial()
 	{
 		GameObject bulls = GameObject.Instantiate(bullet,bulletSpawnPos.transform.position, Quaternion.identity) as GameObject;
 		if (radians > startingPoint + 3.14f) radians = startingPoint;

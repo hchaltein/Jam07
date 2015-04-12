@@ -12,19 +12,6 @@ public Vector2 vel;
 	void Start () {
 		startingPoint = 0f;
 		radians = startingPoint;
-        /*
-        if (this.gameObject.name == "Cannon A")
-        {
-			InvokeRepeating("ShootingRadial",0.1f,.1f);
-			InvokeRepeating("IncreaseAngle",0.1f,.001f);
-		}
-        //if (this.gameObject.name == "Cannon A")
-		//InvokeRepeating("ShootingRDiagonal",0.1f,.1f);
-//		if(this.gameObject.name == "Center")
-//		InvokeRepeating("ShootingStraight",0.1f,.2f);
-        //if (this.gameObject.name == "Cannon A")
-		//InvokeRepeating("ShootingLDiagonal",0.1f,.1f);
-        */
 	}
 	
 	// Update is called once per frame
@@ -57,7 +44,7 @@ public Vector2 vel;
 
     public void IncreaseAngle()
     {
-		radians+= 0.01f;
+		radians+= 0.12f;
 	}
     public void ShootingRadial()
 	{

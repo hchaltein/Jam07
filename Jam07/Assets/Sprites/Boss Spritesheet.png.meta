@@ -54,7 +54,7 @@ TextureImporter:
         y: 0
         width: 264
         height: 88
-      alignment: 5
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Boss Spritesheet_1
@@ -64,7 +64,7 @@ TextureImporter:
         y: 0
         width: 264
         height: 88
-      alignment: 5
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Boss Spritesheet_2
@@ -74,7 +74,7 @@ TextureImporter:
         y: 0
         width: 264
         height: 88
-      alignment: 5
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Boss Spritesheet_3
@@ -84,7 +84,7 @@ TextureImporter:
         y: 0
         width: 264
         height: 88
-      alignment: 5
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 

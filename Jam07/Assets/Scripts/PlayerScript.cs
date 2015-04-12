@@ -1,21 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour {
 
     public float Health;
+
+    public GameObject PlayerHPDisplay;
+
     public GameObject bulletPrefab;
 	// Use this for initialization
 	void Start () {
         Health = 100.0f;
+        UpdateHealthUI();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	    if(Health <= 0.0f)
+        UpdateHealthUI();
+        
+        if(Health <= 0.0f)
         {
             Debug.Log("The player Died !!!!!");
-            Destroy(this.gameObject);
+            
+            //Destroy(this.gameObject);
+
+            Application.LoadLevel("MainMenu");
         }
 
         if (this.transform.position.y < -6 || Mathf.Abs(this.transform.position.x) > 10 || this.transform.position.y > 10)
@@ -63,11 +73,17 @@ public class PlayerScript : MonoBehaviour {
             Health -= 10.0f;
         }
 
-        if(col.name == "enemyCraft")
+        if(col.name == "BossCore")
         {
             Health -= 25;
         }
     }
 
 
+        public void UpdateHealthUI()
+    {
+        PlayerHPDisplay.GetComponent<Text>().text = "Player HP: " + Health.ToString();
+    }
 }
+
+

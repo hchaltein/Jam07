@@ -44,6 +44,6 @@ public class BossScript : MonoBehaviour {
     void UpdateState()
     {
         if (Input.GetKeyDown(KeyCode.Space)) CurState++;
-       // if (CurState.CompareTo( 4)) CurState = 0;
+       
     }
 }

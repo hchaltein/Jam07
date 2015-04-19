@@ -22,8 +22,6 @@ public class PlayerScript : MonoBehaviour {
         if(Health <= 0.0f)
         {
             Debug.Log("The player Died !!!!!");
-            
-            //Destroy(this.gameObject);
 
             Application.LoadLevel("MainMenu");
         }
